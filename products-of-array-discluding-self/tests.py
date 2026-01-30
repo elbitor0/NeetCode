@@ -18,6 +18,7 @@ tests = [
 sol = Solution()
 
 for i, (nums, expected) in enumerate(tests, 1):
-    assert sol.productExceptSelf(nums) == expected, f"Test {i} failed"
+    res = sol.productExceptSelf(nums)
+    assert res == expected, f"Test {i} failed\ngot {res}\nshouldvd {expected}"
 
 print("✅ All tests passed")
