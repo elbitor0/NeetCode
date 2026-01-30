@@ -2,16 +2,12 @@ from typing import List
 from numpy import array as arr
 
 class Solution:  
-    def isAnagram(self, s: str, t: str) -> bool:
-        histogram = {}
-        for c in s:
-            histogram[c] = histogram.get(c,0)+1
-        for c in t:
-            histogram[c] = histogram.get(c,0)-1
-        for v in histogram.values():
-             if v != 0:
-                return False
-        return True
+    def str_value(self, str):
+        res =[0]*26
+        for c in str:
+            res[ord(c) - 97] += 1
+        return tuple(res)
+
 
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         dico = {}
@@ -21,5 +17,5 @@ class Solution:
                 dico[str_val].append(str)
             else:
                 dico[str_val] = [str]
-        res = dico.values()
+        res = list(dico.values())
         return res

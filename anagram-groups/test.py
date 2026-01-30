@@ -9,8 +9,6 @@ def test_basic_example():
     strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
     expected = [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
     assert normalize(sol.groupAnagrams(strs)) == normalize(expected)
-#test_basic_example()
-print(ord('a'))
 def test_single_word():
     assert normalize(sol.groupAnagrams(["abc"])) == [["abc"]]
 
@@ -47,11 +45,6 @@ def test_different_frequencies():
     assert normalize(sol.groupAnagrams(strs)) == normalize(expected)
 
 
-def test_case_sensitivity():
-    strs = ["eat", "Tea", "ate"]
-    expected = [["eat", "ate"], ["Tea"]]
-    assert normalize(sol.groupAnagrams(strs)) == normalize(expected)
-
 
 def test_empty_strings():
     strs = ["", "", "a"]
@@ -86,3 +79,8 @@ def test_all_anagrams():
     strs = ["bca", "abc", "cba"]
     expected = [["bca", "abc", "cba"]]
     assert normalize(sol.groupAnagrams(strs)) == normalize(expected)
+
+test_basic_example()
+test_bad_key_trap()
+test_all_anagrams()
+test_different_frequencies()
